@@ -138,5 +138,41 @@ namespace LindkedList
             }
             throw new NullReferenceException("Given data not present");
         }
+        public bool Remove(int input)
+        {
+            if (head == null)
+                return false;
+            if (head.Next == null)
+                head = null;
+            Node t = head, pre = null;
+            while (t != null)
+            {
+                if (t.data == input)
+                {
+                    if (pre == null)
+                    {
+                        head = t.Next;
+                        return true;
+                    }
+                    pre.Next = t.Next;
+                    return true;
+                }
+                pre = t;
+                t = t.Next;
+            }
+            return false;
+        }
+        public int Size()
+        {
+            if (head == null)
+                return 0;
+            Node t = head; int count = 0;
+            while (t != null)
+            {
+                count++;
+                t = t.Next;
+            }
+            return count;
+        }
     }
 }

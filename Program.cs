@@ -15,6 +15,8 @@ namespace LindkedList
             list.PopLast();
             list.Search(30);
             list.insertAfter(40, 30);
+            list.Remove(30);
+            list.Size();
         }
     }
 }
