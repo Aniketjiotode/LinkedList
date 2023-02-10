@@ -87,6 +87,25 @@ namespace LindkedList
             head = head.Next;
             return value;
         }
-        
+        public int PopLast() 
+        {
+            if (head == null)
+            {
+                throw new NullReferenceException("List is Empty");
+            }
+            Node t = head, pre = head;
+            while (t.Next!= null)
+            {
+                pre = t;
+                t = t.Next;
+            }
+            int obj = t.data;
+            if (head.Next == null)
+            {
+                head = null;
+            }
+            pre.Next = null;
+            return obj;
+        }
     }
 }

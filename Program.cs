@@ -11,8 +11,8 @@ namespace LindkedList
             list.Append(56);
             list.Append(76);
             list.insert(1, 30);
-            list.pop(); 
-      
+            list.pop();
+            list.PopLast();
         }
     }
 }
