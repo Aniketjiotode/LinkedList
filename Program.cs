@@ -13,6 +13,7 @@ namespace LindkedList
             list.insert(1, 30);
             list.pop();
             list.PopLast();
+            list.Search(30);
         }
     }
 }
