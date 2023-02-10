@@ -7,7 +7,10 @@ namespace LindkedList
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            UnsortedList list= new UnsortedList();
+            list.Add(56);
+            list.Add(30);
+            list.Add(70);
       
         }
     }
