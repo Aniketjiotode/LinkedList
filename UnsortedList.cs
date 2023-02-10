@@ -87,5 +87,6 @@ namespace LindkedList
             head = head.Next;
             return value;
         }
+        
     }
 }
