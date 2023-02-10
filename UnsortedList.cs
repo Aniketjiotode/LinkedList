@@ -71,5 +71,21 @@ namespace LindkedList
             }
             throw new NullReferenceException("index is not in range");
         }
+
+        public int pop()
+        {
+            int value;
+            if(head==null)
+                throw new NullReferenceException("empty List");
+            if (head.Next == null)
+            {
+                value= head.data;
+                head = null;
+                return value;
+            }
+            value= head.data;
+            head = head.Next;
+            return value;
+        }
     }
 }
