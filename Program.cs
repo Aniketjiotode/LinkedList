@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 
 namespace LindkedList
+
 {
     internal class Program
     {
