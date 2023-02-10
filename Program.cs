@@ -8,9 +8,9 @@ namespace LindkedList
         static void Main(string[] args)
         {
             UnsortedList list= new UnsortedList();
-            list.Add(56);
-            list.Add(30);
-            list.Add(70);
+            list.Append(56);
+            list.Append(30);
+            list.Append(76);
       
         }
     }
