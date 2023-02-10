@@ -120,5 +120,23 @@ namespace LindkedList
             }
             return false;
         }
+        public bool insertAfter(int value, int data)
+        {
+            if (head == null)
+                throw new NullReferenceException("empty List");
+            Node n = new Node(data);
+            Node t = head;
+            while (t != null)
+            {
+                if (t.data.Equals(value))
+                {
+                    t.Next = n;
+                    n.Next = t.Next;
+                    return true;
+                }
+                t=t.Next;
+            }
+            throw new NullReferenceException("Given data not present");
+        }
     }
 }
