@@ -10,8 +10,8 @@ namespace LindkedList
         {
             UnsortedList list= new UnsortedList();
             list.Append(56);
-            list.Append(30);
             list.Append(76);
+            list.insert(1, 30);
       
         }
     }

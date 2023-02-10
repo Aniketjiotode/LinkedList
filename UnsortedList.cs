@@ -47,6 +47,29 @@ namespace LindkedList
             t.Next = n;
             return true;
         }
-
+        public bool insert(int ind,int data)
+        {
+            Node n=new Node(data);
+            if (ind==0)
+            {
+              n.Next = head;
+                head = n;
+                return true;
+            }
+            Node t = head, pre = null;
+            while (ind>0 && t.Next != null)
+            {
+                ind--;
+                pre = t;
+                t = t.Next;
+            }
+            if(ind==0)
+            {
+                pre.Next = n;
+                n.Next = t;
+                return true;
+            }
+            throw new NullReferenceException("index is not in range");
+        }
     }
 }
