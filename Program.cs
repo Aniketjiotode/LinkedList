@@ -7,14 +7,13 @@ namespace LindkedList
     {
         static void Main(string[] args)
         {
-            UnsortedList list= new UnsortedList();
-            list.Append(56);
-            list.Append(76);
-            list.insert(1, 30);
-            list.pop();
-            list.PopLast();
-            list.Search(30);
-            list.insertAfter(40, 30);
+            UnsortedList<int> list= new UnsortedList<int>();
+            list.Add(56);
+            list.Add(30);
+            list.Add(76);
+            list.insertAfter(40,30);
+            Console.WriteLine(list.ToString());
+
         }
     }
 }
