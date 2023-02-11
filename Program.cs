@@ -11,8 +11,6 @@ namespace LindkedList
             list.Add(56);
             list.Add(30);
             list.Add(76);
-            list.Append(86);
-            list.Append(99);
             Console.WriteLine(list.ToString());
       
         }

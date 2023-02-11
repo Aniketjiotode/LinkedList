@@ -44,23 +44,7 @@ namespace LindkedList
             }
             return s;
         }
-        public bool Append(T data)
-        {
-            Node n = new Node(data);
-            if (head == null)
-            {
-                head = n;
-                return true;
-            }
-
-            Node t = head;
-            while (t.Next != null)
-            {
-                t = t.Next;
-            }
-            t.Next = n;
-            return true;
-        }
+        
 
     }
 }
