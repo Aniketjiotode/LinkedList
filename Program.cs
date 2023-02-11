@@ -7,12 +7,12 @@ namespace LindkedList
     {
         static void Main(string[] args)
         {
-            UnsortedList list= new UnsortedList();
+            UnsortedList<int> list= new UnsortedList<int>();
             list.Append(56);
             list.Append(76);
             list.insert(1, 30);
             list.pop(); 
-      
+            Console.WriteLine(list.pop());
         }
     }
 }
