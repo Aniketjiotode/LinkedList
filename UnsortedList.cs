@@ -3,22 +3,21 @@ using System.Collections.Generic;
 using System.Text;
 
 namespace LindkedList
-
 {
-    internal class UnsortedList
+    internal class UnsortedList<T>
     {
         private Node head;
         public class Node
         {
-            public int data;
+            public T data;
             public Node Next;
-            public Node(int data)
+            public Node(T data)
             {
                 this.data = data;
             }
         }
 
-        public bool Add(int data)
+        public bool Add(T data)
         {
             Node n = new Node(data);
             if(head==null)
@@ -30,7 +29,22 @@ namespace LindkedList
             head = n;
             return true;
         }
-        public bool Append(int data)
+        public override string ToString()
+        {
+            if (head == null)
+            {
+                return null;
+            }
+            Node t = head;
+            string s = "";
+            while (t != null)
+            {
+                s = s + t.data + " ";
+                t = t.Next;
+            }
+            return s;
+        }
+        public bool Append(T data)
         {
             Node n = new Node(data);
             if (head == null)
