@@ -5,32 +5,48 @@ using System.Text;
 namespace LindkedList
 
 {
-    internal class UnsortedList
+    internal class UnsortedList<T>
     {
         private Node head;
         public class Node
         {
-            public int data;
+            public T data;
             public Node Next;
-            public Node(int data)
+            public Node(T data)
             {
                 this.data = data;
             }
         }
 
-        public bool Add(int data)
+        public bool Add(T data)
         {
             Node n = new Node(data);
-            if(head==null)
+            if (head == null)
             {
                 head = n;
                 return true;
             }
-            n.Next=head;
+            n.Next = head;
             head = n;
             return true;
         }
-        public bool Append(int data)
+        public override string ToString()
+        {
+            if (head == null)
+            {
+
+                return null;
+            }
+            Node t = head;
+            string s = "";
+            while (t != null)
+            {
+                s = s + t.data + " ";
+                t = t.Next;
+            }
+            return s;
+        }
+        public bool Append(T data)
         {
             Node n = new Node(data);
             if (head == null)
@@ -47,23 +63,23 @@ namespace LindkedList
             t.Next = n;
             return true;
         }
-        public bool insert(int ind,int data)
+        public bool insert(int ind, T data)
         {
-            Node n=new Node(data);
-            if (ind==0)
+            Node n = new Node(data);
+            if (ind == 0)
             {
-              n.Next = head;
+                n.Next = head;
                 head = n;
                 return true;
             }
             Node t = head, pre = null;
-            while (ind>0 && t.Next != null)
+            while (ind > 0 && t.Next != null)
             {
                 ind--;
                 pre = t;
                 t = t.Next;
             }
-            if(ind==0)
+            if (ind == 0)
             {
                 pre.Next = n;
                 n.Next = t;
@@ -72,22 +88,22 @@ namespace LindkedList
             throw new NullReferenceException("index is not in range");
         }
 
-        public int pop()
+        public T pop()
         {
-            int value;
-            if(head==null)
+            T value;
+            if (head == null)
                 throw new NullReferenceException("empty List");
             if (head.Next == null)
             {
-                value= head.data;
+                value = head.data;
                 head = null;
                 return value;
             }
-            value= head.data;
+            value = head.data;
             head = head.Next;
             return value;
         }
-        public int PopLast() 
+        public T PopLast() 
         {
             if (head == null)
             {
@@ -99,7 +115,7 @@ namespace LindkedList
                 pre = t;
                 t = t.Next;
             }
-            int obj = t.data;
+            T obj = t.data;
             if (head.Next == null)
             {
                 head = null;
@@ -109,3 +125,6 @@ namespace LindkedList
         }
     }
 }
+
+    
+
